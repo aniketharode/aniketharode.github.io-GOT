@@ -1,0 +1,17 @@
+.margin{
+    margin-left: 30%;
+    margin-top: 5%;
+    background: #00ff80;
+}
+
+.shad{
+    box-shadow: 0 0 10px 10px rgba(0, 140, 186, 0.5);
+}
+
+.example-button {
+    margin-top: 16px;
+  }
+  
+  .example-tooltip-red {
+    background: hsl(209, 100%, 60%);
+  }

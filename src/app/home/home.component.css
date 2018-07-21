@@ -1,0 +1,45 @@
+
+.imgsize{
+    height: 60vh;
+    width: 88vw;
+}
+
+.imgsize1{
+    height: 60vh;
+    width: 80vw;
+    
+}
+
+.container{
+    
+}
+
+.fontsize{
+    color: black;
+    font-style: italic;
+    font-size: 30%;
+    text-align: center;
+}
+
+.boarder{
+    border-style: solid;
+    border-color: red;
+}
+
+.buttonsize{
+    width: 40%;
+}
+
+.margin{
+    margin-left: 10%;
+}
+
+.example-button {
+    margin-top: 16px;
+  }
+  
+  .example-tooltip-red {
+    background: #b71c1c;
+  }
+
+  

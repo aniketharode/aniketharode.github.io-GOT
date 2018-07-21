@@ -1,0 +1,197 @@
+<div class="container" *ngIf="currentblogvalue">
+    <mat-progress-bar *ngIf !=currentblogvalue mode="indeterminate"></mat-progress-bar> 
+    
+  <!--<div class="row margin">
+    <div class="col-6">
+      book-details works! 
+
+    </div>
+    <div class="col-6">
+      {{currentblogvalue.name}}
+
+    </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        book-details works! 
+  
+      </div>
+      
+      <div class="col-6">
+        {{currentblogvalue.isbn}}
+  
+      </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          book-details works! 
+    
+        </div>
+
+        <div class="col-6">
+          {{currentblogvalue.numberOfPages}}
+    
+        </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      book-details works! 
+
+    </div>
+
+    <div class="col-6">
+      {{currentblogvalue.authors}}
+
+    </div>
+
+</div>
+
+<div class="row">
+  <div class="col-6">
+    Publishers 
+
+  </div>
+
+  <div class="col-6">
+    {{currentblogvalue.publisher}}
+
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-6">
+    country 
+
+  </div>
+
+  <div class="col-6">
+    {{currentblogvalue.country}}
+
+  </div>
+
+</div>
+
+
+<div class="row">
+  <div class="col-6">
+    Released 
+
+  </div>
+
+  <div class="col-6">
+    {{currentblogvalue.released}}
+
+  </div>
+
+</div>
+
+  <div class="row">
+    <div class="col-6">
+      
+        characters<br/>
+     
+
+    </div>
+
+    <div class="col-6">
+      <p *ngFor="let characters of currentcharacter">
+        {{characters}}<br/>
+      </p>
+
+    </div>
+
+
+</div>-->
+
+<table class="table table-striped">
+   
+    <tbody>
+      <tr>
+        
+        <td>Name Of  Book </td>
+        <td><div class="margin11">{{currentblogvalue.name}}
+          </div></td>
+       
+      </tr>
+      <tr>
+        
+        <td>Isbn</td>
+        <td><div class="margin11">{{currentblogvalue.isbn}}
+          </div></td>
+        
+      </tr>
+      <tr>
+        
+          <td>numberOfPages</td>
+          <td><div class="margin11">{{currentblogvalue.numberOfPages}}
+            </div></td>
+        
+      </tr>
+      <tr>
+        
+          <td>authors</td>
+          <td><div class="margin11">{{currentblogvalue.authors}}
+            </div></td>
+        
+      </tr>
+      <tr>
+        
+          <td>publisher</td>
+          <td><div class="margin11">{{currentblogvalue.publisher}}
+            </div></td>
+        
+      </tr>
+      <tr>
+        
+          <td>country</td>
+          <td><div class="margin11">{{currentblogvalue.country}}
+            </div></td>
+        
+      </tr>
+      <tr>
+        
+          <td>released</td>
+          <td><div class="margin11">{{currentblogvalue.released}}
+            </div></td>
+        
+      </tr>
+
+      <tr>
+        
+          <td>characters</td>
+          <td><div class="margin11" *ngFor="let characters of characterName">
+             <b>Name:-</b> {{characters.name}} 
+              <br/>
+              know more about {{characters.name}} go to url ({{characters.url}})
+              <br/>
+            
+            </div></td>
+        
+      </tr>
+
+      
+
+      <tr>
+        
+          <td></td>
+          <td>
+            <div class="margin11">
+              <a class="btn btn-success" (click)="goBack()">Go Back</a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a class="btn btn-primary" [routerLink]="['/comment']">PostComment</a>
+            </div></td>
+        
+      </tr>
+    </tbody>
+    
+  </table>
+
+
+</div>
+

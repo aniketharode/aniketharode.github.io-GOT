@@ -1,0 +1,19 @@
+<div class="container">
+
+    <form #blogform="ngForm" (ngSubmit)="createBlog()">
+  
+      <div class="form-group">
+        <br/>
+        <label for="exampleFormControlTextarea1">Post your comment</label>
+        <textarea  class="form-control"  name="comment" [(ngModel)]="comment"  #title="ngModel" id="exampleInputEmail1" placeholder="Enter your comment regarding these book" rows="3" required></textarea>
+      </div>
+  
+      <div [hidden]="title.valid || title.pristine" class="alert">
+    comment is required
+    
+      </div>
+    
+      
+      <button type="submit" class="btn btn-primary" [disabled]="!blogform.form.valid">post comment</button>
+    </form>
+    </div>

@@ -1,0 +1,53 @@
+
+<div class="container">
+  <mat-progress-bar *ngIf !=allValues mode="indeterminate"></mat-progress-bar>
+
+<div 
+matTooltip="Click to see details"
+matTooltipClass="example-tooltip-red"
+aria-label="Button that shows a red tooltip"
+matTooltipPosition="above"
+class="example-button"
+class="card text-black mb-3 margin" id="val"  style="max-width: 28rem; background:'hsl(209, 100%, 60%);';cursor: pointer;box-shadow: 0 0 5px 5px rgba(0, 140, 186, 0.5)" *ngFor="let val of allValues;let i=index;" 
+onmouseover="this.style.background='white'"
+onmouseout="this.style.background='hsl(209, 100%, 60%)'"
+[routerLink]="['/Characterdeatils',val.url]"
+>
+
+
+<div class="card-header">Character No. #{{i + 1}}</div>
+
+<div class="card-body">
+  <h5 class="card-title" *ngIf ="val.name;else other_content12">Character Name:-{{val.name}}</h5>
+  <ng-template #other_content12><h5>No name available</h5></ng-template>
+  <p class="card-text" *ngFor="let name of BooksName">Books :-{{name.name}}</p>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+<!--<p *ngFor="let val of allValues">
+{{val}}
+(mouseover)="fireEvent($event)"
+ng-class="{'shad':hovering}"
+ng-mouseenter="hovering=true"
+ng-mouseleave="hovering=false"
+
+<div (mouseover)="hover=true" (mouseleave)="hover=false">
+<span [ngStyle]="{backgroundColor: hover==true  ? 'red' : 'grey' }">hello {{ hover }}</span>
+</div>---------  works
+
+(mouseover)="fireEvent($event,val)"
+(mouseleave)="fireEvent($event,val)"
+
+
+
+[ngClass]="shad" 
+(mouseover)="changeStyle($event)" (mouseout)="changeStyle($event)"
+</p>-->

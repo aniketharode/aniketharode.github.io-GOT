@@ -1,0 +1,192 @@
+<div class="container" *ngIf="currentblogvalue">
+   
+    
+  <!--<div class="row margin">
+    <div class="col-6">
+      book-details works! 
+
+    </div>
+    <div class="col-6">
+      {{currentblogvalue.name}}
+
+    </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        book-details works! 
+  
+      </div>
+      
+      <div class="col-6">
+        {{currentblogvalue.isbn}}
+  
+      </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          book-details works! 
+    
+        </div>
+
+        <div class="col-6">
+          {{currentblogvalue.numberOfPages}}
+    
+        </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      book-details works! 
+
+    </div>
+
+    <div class="col-6">
+      {{currentblogvalue.authors}}
+
+    </div>
+
+</div>
+
+<div class="row">
+  <div class="col-6">
+    Publishers 
+
+  </div>
+
+  <div class="col-6">
+    {{currentblogvalue.publisher}}
+
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-6">
+    country 
+
+  </div>
+
+  <div class="col-6">
+    {{currentblogvalue.country}}
+
+  </div>
+
+</div>
+
+
+<div class="row">
+  <div class="col-6">
+    Released 
+
+  </div>
+
+  <div class="col-6">
+    {{currentblogvalue.released}}
+
+  </div>
+
+</div>
+
+  <div class="row">
+    <div class="col-6">
+      
+        characters<br/>
+     
+
+    </div>
+
+    <div class="col-6">
+      <p *ngFor="let characters of currentcharacter">
+        {{characters}}<br/>
+      </p>
+
+    </div>
+
+
+</div>-->
+
+<table class="table table-striped">
+ 
+   
+    <tbody>
+      <tr>
+        
+        <td>Name Of  Houses </td>
+        <td><div class="margin11">{{currentblogvalue.name}}
+          </div></td>
+       
+      </tr>
+      <tr>
+        
+        <td>region</td>
+        <td><div class="margin11">{{currentblogvalue.region}}
+          </div></td>
+        
+      </tr>
+      <tr>
+        
+          <td>coatOfArms</td>
+          <td><div class="margin11">{{currentblogvalue.coatOfArms}}
+            </div></td>
+        
+      </tr>
+      <tr>
+        
+          <td>titles</td>
+          <td><div class="margin11" *ngIf ="currentblogvalue.titles;else other">{{currentblogvalue.titles}}</div>
+            
+            <td><div class="margin11" *ngIf !="currentblogvalue.titles">No item available</div>
+          </td>
+        
+      </tr>
+      <tr>
+        
+          <td>seats</td>
+          <td><div class="margin11">{{currentblogvalue.seats}}
+            </div></td>
+        
+      </tr>
+      <tr>
+        
+          <td>words</td>
+          <td><div class="margin11">{{currentblogvalue.words}}
+            </div></td>
+        
+      </tr>
+     
+
+      <tr>
+        
+          <td>swornMembers</td>
+          <td><div class="margin11" *ngFor="let characters of characterName">
+             <b>Name:-</b> {{characters.name}} 
+              <br/>
+              know more about {{characters.name}} go to url ({{characters.url}})
+              <br/>
+            
+            </div></td>
+        
+      </tr>
+
+      
+
+      <tr>
+        
+          <td></td>
+          <td><div class="margin11">
+              <mat-icon></mat-icon>
+              <a class="btn btn-success" (click)="goBack()">Go Back</a>
+            </div></td>
+        
+      </tr>
+    </tbody>
+    
+  </table>
+
+
+</div>
+

@@ -1,0 +1,173 @@
+
+<div class="container" *ngIf = "display;else other_content">
+ 
+  <div class="form-group">
+      <br/>
+      <mat-form-field class="example-full-width">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name= "searchval" [(ngModel)]="searchval"
+    placeholder="Enter the specific book name"
+    matInput [formControl]="myControl" [matAutocomplete]="auto"
+    >
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+    <br/>
+    <button (click)="search(val)" class="btn btn-success">Search</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button (click)="sortBy(val)" class="btn btn-primary">Sort By Name</button>
+  </div>
+<br/>
+
+
+
+  <div class="row">
+      
+<div 
+matTooltip="Click to see details"
+matTooltipClass="example-tooltip-red"
+aria-label="Button that shows a red tooltip"
+matTooltipPosition="above"
+class="example-button "
+class="card text-black mb-3 margin" id="val" style="max-width: 28rem; background:'#ff3333';cursor: pointer;box-shadow: 0 0 5px 5px rgba(0, 140, 186, 0.5)" *ngFor="let val of allValues" 
+onmouseover="this.style.background='white'"
+onmouseout="this.style.background='#ff3333'"
+[routerLink]="['/bookdeatils',val.url]"
+>
+  <div class="card-header"> Book Name:-{{val.name}}</div>
+  <div class="card-body" >
+    <h5 class="card-title">Author by :{{val.authors}}</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  
+</div>
+</div>
+</div>
+
+<ng-template #other_content>
+
+
+
+    <div class="container" *ngIf = autosearch>
+  
+  
+        <div class="form-group">
+            <br/>
+            <mat-form-field class="example-full-width">
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name= "searchval" [(ngModel)]="searchval"
+          matInput [formControl]="myControl" [matAutocomplete]="auto"
+          placeholder="Enter the specific book name">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+        <br/>
+          <button (click)="search(val)" class="btn btn-success">Search</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button (click)="backToNormal(val)" class="btn btn-primary">Back to normal</button>
+        </div>  
+        <div class="row">
+            
+      <div 
+      matTooltip="Click to see details"
+      matTooltipClass="example-tooltip-red"
+      aria-label="Button that shows a red tooltip"
+      matTooltipPosition="above"
+      class="example-button "
+      class="card text-black mb-3 margin" id="val" style="max-width: 28rem; background:'#ff3333';cursor: pointer;box-shadow: 0 0 5px 5px rgba(0, 140, 186, 0.5)" 
+      onmouseover="this.style.background='white'"
+      onmouseout="this.style.background='#ff3333'"
+      [routerLink]="['/bookdeatils',autosearch.url]"
+      >
+        <div class="card-header"> Book Name:-{{autosearch.name}}</div>
+        <div class="card-body" >
+          <h5 class="card-title">Author by :{{autosearch.authors}}</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        
+      </div>
+      </div>
+      </div>
+
+
+
+
+
+<!--******************************-->
+
+<div class="container">
+  <mat-progress-bar *ngIf !=allValues mode="indeterminate"></mat-progress-bar>
+  
+  
+  <div class="form-group">
+      <br/>
+      <mat-form-field class="example-full-width">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name= "searchval" [(ngModel)]="searchval"
+    matInput [formControl]="myControl" [matAutocomplete]="auto"
+    placeholder="Enter the specific book name">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <br/>
+    <button (click)="search(val)" class="btn btn-success">Search</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button (click)="backToNormal(val)" class="btn btn-primary">Back to normal</button>
+  </div>  
+  <div class="row">
+      
+<div 
+matTooltip="Click to see details"
+matTooltipClass="example-tooltip-red"
+aria-label="Button that shows a red tooltip"
+matTooltipPosition="above"
+class="example-button "
+class="card text-black mb-3 margin" id="val" style="max-width: 28rem; background:'#ff3333';cursor: pointer;box-shadow: 0 0 5px 5px rgba(0, 140, 186, 0.5)" *ngFor="let val of testname" 
+onmouseover="this.style.background='white'"
+onmouseout="this.style.background='#ff3333'"
+[routerLink]="['/bookdeatils',val.url]"
+>
+  <div class="card-header"> Book Name:-{{val.name}}</div>
+  <div class="card-body" >
+    <h5 class="card-title">Author by :{{val.authors}}</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  
+</div>
+</div>
+</div>
+</ng-template>
+
+
+
+<!--  ********************************-->
+
+
+
+
+
+<!--<p *ngFor="let val of allValues">
+  {{val}}
+  (mouseover)="fireEvent($event)"
+  ng-class="{'shad':hovering}"
+ng-mouseenter="hovering=true"
+ng-mouseleave="hovering=false"
+
+<div (mouseover)="hover=true" (mouseleave)="hover=false">
+  <span [ngStyle]="{backgroundColor: hover==true  ? 'red' : 'grey' }">hello {{ hover }}</span>
+  </div>---------  works
+
+  (mouseover)="fireEvent($event,val)"
+  (mouseleave)="fireEvent($event,val)"
+
+
+
+  [ngClass]="shad" 
+(mouseover)="changeStyle($event)" (mouseout)="changeStyle($event)"
+</p>-->
